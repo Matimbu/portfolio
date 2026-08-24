@@ -1,6 +1,6 @@
 # Portfolio — Raywel Francis Martin
 
-Source for [matimbu.github.io/portfolio](https://matimbu.github.io/portfolio/) —
+Source for <a href="https://matimbu.github.io/portfolio/" target="_blank">matimbu.github.io/portfolio</a> —
 a single-page site built with plain HTML, CSS, and Bootstrap. Dark theme,
 gold accent, no framework beyond Bootstrap for layout.
 
