@@ -197,6 +197,13 @@ section {
   color: var(--text);
 }
 
+/* Lighter tier — things I've used but wouldn't call a strength */
+.tech-pill.muted {
+  background: transparent;
+  border-style: dashed;
+  color: var(--muted);
+}
+
 .pill-icon {
   width: 16px;
   height: 16px;
@@ -507,8 +514,8 @@ footer {
         </h1>
 
         <p class="hero-tagline">
-          I build clean, functional systems focused on simplicity and user experience.
-          Passionate about software development and modern UI design.
+          I build desktop and web applications — mostly C# and WinForms, plus plain
+          HTML, CSS and JavaScript. Still learning, and building things is how I get there.
         </p>
 
         <div class="mt-4 d-flex gap-3 flex-wrap">
@@ -535,23 +542,32 @@ footer {
       <div class="col-lg-7">
         <div class="card-custom h-100">
           <p>
-            I'm <strong>Raywel Francis T. Martin</strong>, an IT student from STI College Malolos, who values simple, clear, and meaningful code.
-          Inspired by philosophy, I approach programming with curiosity and reflection. I build systems 
-          using C#, Java, and web technologies, aiming to create solutions that are both functional and intuitive.
-          also known on the court as <span class="highlight">Yao Ming — The Court's Coder</span>.
+            I'm <strong>Raywel Francis T. Martin</strong>, an IT student at STI College Malolos, from Bulacan.
+            I'm still early in learning to code, and it sticks best when I build something and work out
+            where I get stuck — also known on the court as
+            <span class="highlight">Yao Ming — The Court's Coder</span>.
           </p>
           <p>
-            I enjoy building applications using Java and C#, and designing user interfaces with Figma.
-            My goal is to become a Software Engineer who creates efficient, clean, and impactful systems.
+            Most of my time has gone into <strong>The Hive</strong>, a self-order kiosk written in C# and
+            WinForms. I didn't use a UI library, so I drew the buttons, tabs, and product tiles myself with
+            GDI+ — partly a design choice, partly because I wanted to understand how the rendering actually
+            worked. Building it alone meant working through the interface, the order flow, and the payment
+            logic one problem at a time. There's still plenty I'd do differently now.
+          </p>
+          <p>
+            I built this site in plain HTML, CSS, JavaScript, and Bootstrap, so I pay attention to how
+            things look as well as whether they run. I'd rather be clear about what I know well and what
+            I'm still learning. Right now I'm looking for OJT and junior developer roles, and I'm glad to
+            be pointed at things worth learning next.
           </p>
           <p class="mb-0">
             <span class="info-pill">
-              <img src="images/sti-logo.png" alt="SAP" class="pill-icon">
+              <img src="images/sti-logo.png" alt="STI College Malolos" class="pill-icon">
               STI College Malolos — BSIT
             </span>
 
             <span class="info-pill">
-              💼 Dream Job: Software Engineer
+              💼 Open to OJT / Junior Developer roles
             </span>
           </p>
         </div>
@@ -560,18 +576,25 @@ footer {
       <!--------------------------- Tech Stack ------------------------------>
       <div class="col-lg-5">
         <div class="card-custom h-100">
-          <p class="stack-label">// TECH STACK</p>
-          <div class="d-flex flex-wrap gap-2">           
-            <span class="tech-pill">☕ Java</span>
+
+          <p class="stack-label">// CORE</p>
+          <div class="d-flex flex-wrap gap-2">
             <span class="tech-pill">💻 C#</span>
-            <span class="tech-pill">🗄️ SQL / SQLite</span>
+            <span class="tech-pill">🔷 .NET</span>
+            <span class="tech-pill">🪟 WinForms</span>
+            <span class="tech-pill">☕ Java</span>
             <span class="tech-pill">🌐 HTML</span>
             <span class="tech-pill">🎨 CSS</span>
-            <span class="tech-pill">🧩 Bootstrap</span>
             <span class="tech-pill">⚡ JavaScript</span>
-            <span class="tech-pill">🖌️ Figma</span>
-            <span class="tech-pill">🏢 SAP S/4HANA</span>
-            <span class="tech-pill">🪟 WinForms</span>
+            <span class="tech-pill">🧩 Bootstrap</span>
+          </div>
+
+          <p class="stack-label mt-4">// FAMILIAR WITH</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="tech-pill muted">🗄️ SQL / SQLite</span>
+            <span class="tech-pill muted">🔧 Git</span>
+            <span class="tech-pill muted">🏢 SAP S/4HANA</span>
+            <span class="tech-pill muted">🖌️ Figma</span>
           </div>
         </div>
       </div>
