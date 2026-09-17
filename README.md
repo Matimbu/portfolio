@@ -9,7 +9,7 @@ gold accent, no framework beyond Bootstrap for layout.
 - **Hero** — intro and tagline
 - **About** — background as a BSIT student at STI College Malolos
 - **Tech stack** — core: C#, .NET, WinForms, Java, HTML/CSS/JS, Bootstrap. Familiar with: SQL/SQLite, Git, Unity 3D, SAP S/4HANA, Figma
-- **Featured projects** — [The Hive Kiosk](https://github.com/Matimbu/kiosk-TheHive), Cheesy Potato Balls poster
+- **Featured projects** — [The Hive Kiosk](https://github.com/Matimbu/kiosk-TheHive), Cheesy Potato Balls poster, and [Off the Clock](https://github.com/Matimbu/raywelfrancismartin), my personal site
 - **Credentials** — SAP S/4HANA, Oracle Academy Java Fundamentals
 - **Contact** — email, LinkedIn, Instagram, Discord, and my <a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank">personal site</a>
 

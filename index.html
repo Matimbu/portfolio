@@ -379,6 +379,30 @@ a.kiosk-card {
   text-align: left;
 }
 
+/* ── Personal Site Card ─────────────────────────────────── */
+.site-shot {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #0e0e0e;
+}
+
+.site-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.35s;
+}
+
+.site-shot:hover img {
+  transform: scale(1.03);
+}
+
+.site-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
 /* ── Certifications ─────────────────────────────────────── */
 .certs-wrap {
   max-width: 660px;
@@ -698,6 +722,73 @@ footer {
 
         </div>
       </div>
+      <!-- PERSONAL SITE -->
+      <div class="col-12">
+        <div class="card-custom kiosk-card">
+          <div class="row g-4 align-items-center">
+
+            <div class="col-lg-6">
+              <a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener" class="site-shot d-block">
+                <img src="images/personal-site.png"
+                     alt="Home screen of my personal site: my name in large serif type, surrounded by floating emoji cards">
+              </a>
+            </div>
+
+            <div class="col-lg-6">
+              <p class="proj-label">// Self Project</p>
+              <div class="d-flex align-items-center gap-2">
+                <span class="site-icon" aria-hidden="true">🏀</span>
+                <h4 class="fw-bold mb-0">Off the Clock</h4>
+              </div>
+              <hr class="proj-divider ms-0">
+
+              <h6 class="proj-tagline">"Everything My Portfolio Leaves Out."</h6>
+
+              <p class="product-desc mt-3">
+                A personal site I made on my own time — the things I make,
+                what I do for fun, what I believe in, and where to find me.
+                Plain HTML, CSS and JavaScript, with Lenis for smooth
+                scrolling as the only library.
+              </p>
+
+              <div class="row mt-3 text-start">
+                <div class="col-6">
+                  <ul class="product-desc">
+                    <li>All text in one content file</li>
+                    <li>Drafts hidden on the live site</li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  <ul class="product-desc">
+                    <li>Light / dark theme, remembered</li>
+                    <li>Respects reduced-motion settings</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="proj-bg-block mt-3">
+                <p class="fw-bold mb-1">Project Background</p>
+                <p class="product-desc mb-0">
+                  Started out of boredom, as a home for the side of me a
+                  developer portfolio doesn't cover — basketball, design,
+                  and the videos I make with friends.
+                </p>
+              </div>
+
+              <div class="mt-3 d-flex gap-2 flex-wrap">
+                <span class="cert-pill gold">HTML</span>
+                <span class="cert-pill gold">CSS</span>
+                <span class="cert-pill gold">JavaScript</span>
+              </div>
+
+              <div class="mt-4 d-flex gap-3 flex-wrap">
+                <a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener" class="btn-gold">Visit Site</a>
+                <a href="https://github.com/Matimbu/raywelfrancismartin" target="_blank" rel="noopener" class="btn-ghost">View Code</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
     </div>
