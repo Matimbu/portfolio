@@ -4,6 +4,7 @@ Each version is also a git tag, so `git checkout v1.0` shows the site exactly as
 
 | Version | Released | Summary |
 |---|---|---|
+| [v2.1](v2.1.md) | October 5, 2026 | The contact form sends messages directly through Formspree |
 | [v2.0](v2.0.md) | October 5, 2026 | Glass redesign: light and dark themes, case studies, two new projects, no Bootstrap |
 | [v1.0](#v10) | March 25 to September 20, 2026 | The first portfolio: Bootstrap, dark theme with a gold accent |
 

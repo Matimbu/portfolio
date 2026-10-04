@@ -1,6 +1,6 @@
 # Portfolio: Raywel Francis Martin
 
-**Version 2.0** · [Patch notes](docs/patch-notes/v2.0.md) · [Release history](docs/patch-notes/README.md)
+**Version 2.1** · [Patch notes](docs/patch-notes/v2.1.md) · [Release history](docs/patch-notes/README.md)
 
 Source for <a href="https://matimbu.github.io/portfolio/" target="_blank">matimbu.github.io/portfolio</a>.
 A single-page site in plain HTML, CSS and JavaScript, with no framework and no build step.
@@ -27,7 +27,7 @@ Then open http://localhost:5510.
 
 ## Setup steps
 
-- **Message form.** Put your Formspree form ID in `FORMSPREE_ID` at the top of section 7 in `main.js`. Until then, the form opens the visitor's email app instead.
+- **Message form.** Done: it sends through Formspree, using the form ID in `FORMSPREE_ID` (section 7 of `main.js`). To change where messages go, edit the form in your Formspree dashboard.
 - **Visitor stats.** Add a site in your GoatCounter dashboard, put its name in the commented-out script at the bottom of `index.html`, then remove the comment markers.
 - **Résumé.** Add `resume.pdf` to this folder (a version without your home address), then delete the word `hidden` from the résumé button in the hero.
 - **After editing** `style.css` or `main.js`, bump the `?v=` number where `index.html` loads them, so returning visitors don't get an old cached copy.
