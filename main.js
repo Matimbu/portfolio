@@ -183,7 +183,11 @@ function closeCase(dialog) {
 
 document.querySelectorAll("[data-open]").forEach((button) => {
   button.addEventListener("click", () => {
-    document.getElementById(button.dataset.open).showModal();
+    const dialog = document.getElementById(button.dataset.open);
+    dialog.showModal();
+    // Some browsers (Safari) don't focus a button when it's clicked, so hand
+    // focus back to this card ourselves when the dialog closes.
+    dialog.addEventListener("close", () => button.focus({ preventScroll: true }), { once: true });
   });
 });
 
