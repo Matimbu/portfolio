@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | Raywel Francis T. Martin</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='38' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Space+Grotesk:wght@500..700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+  <!-- GitHub Pages can show this page at any address, so everything it
+       needs is in this file or linked with a full URL. -->
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fafafa; --text: #09090b; --text-2: #52525b; --accent-text: #1d4ed8;
+      --glass: rgba(255, 255, 255, 0.58); --glass-edge: rgba(255, 255, 255, 0.95);
+      --glass-line: rgba(9, 9, 11, 0.08); --glow: rgba(37, 99, 235, 0.16);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #09090b; --text: #fafafa; --text-2: #a1a1aa; --accent-text: #60a5fa;
+      --glass: rgba(255, 255, 255, 0.05); --glass-edge: rgba(255, 255, 255, 0.14);
+      --glass-line: rgba(255, 255, 255, 0.07); --glow: rgba(37, 99, 235, 0.22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100dvh;
+      margin: 0;
+      padding: 1.5rem;
+      background:
+        radial-gradient(40rem 30rem at 20% 10%, var(--glow), transparent 70%),
+        radial-gradient(36rem 28rem at 90% 90%, var(--glow), transparent 70%),
+        var(--bg);
+      color: var(--text);
+      font: 400 1.0625rem/1.65 "DM Sans", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .panel {
+      width: min(100%, 520px);
+      padding: clamp(1.75rem, 5vw, 2.75rem);
+      border: 1px solid var(--glass-line);
+      border-radius: 20px;
+      background: var(--glass);
+      box-shadow: inset 0 1px 0 var(--glass-edge), 0 18px 44px rgba(15, 23, 42, 0.12);
+      -webkit-backdrop-filter: blur(18px) saturate(170%);
+      backdrop-filter: blur(18px) saturate(170%);
+    }
+    .code { margin: 0; color: var(--accent-text); font-weight: 500; letter-spacing: 0.08em; }
+    h1 {
+      margin: 0.5rem 0 0.75rem;
+      font: 600 clamp(2rem, 6vw, 2.75rem)/1.1 "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: -0.03em;
+    }
+    p { margin: 0; color: var(--text-2); }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; margin-top: 1.75rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem; min-height: 46px; padding: 0 1.35rem;
+      border-radius: 999px; background: #2563eb; color: #fff; font-weight: 500; text-decoration: none;
+      transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease;
+    }
+    .btn:hover { background: #1d4ed8; }
+    .btn:active { transform: scale(0.97); }
+    .aside { display: inline-flex; align-items: center; gap: 0.35rem; color: var(--accent-text); font-weight: 500; text-decoration: none; }
+    .aside:hover { text-decoration: underline; text-underline-offset: 3px; }
+    :focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+    @media (prefers-reduced-transparency: reduce) {
+      .panel { background: var(--bg); -webkit-backdrop-filter: none; backdrop-filter: none; }
+    }
+  </style>
+  <script>
+    (function () {
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+</head>
+<body>
+  <main class="panel">
+    <p class="code">404</p>
+    <h1>This page isn't here.</h1>
+    <p>The link might be old, or the address has a typo.</p>
+    <div class="actions">
+      <a class="btn" href="https://matimbu.github.io/portfolio/"><i class="ph ph-house" aria-hidden="true"></i> Back home</a>
+      <a class="aside" href="https://matimbu.github.io/raywelfrancismartin/">Or see what I do off the clock <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </main>
+</body>
+</html>

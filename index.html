@@ -1,1174 +1,589 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raywel Francis T. Martin | Portfolio</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-:root {
-  --bg: #0b0c10;
-  --surface: #111218;
-  --card: #16171f;
-  --accent: #c9a96e;
-  --text: #eaeaea;
-  --muted: #9aa0a6;
-  --border: rgba(255, 255, 255, 0.08);
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  background: linear-gradient(180deg, #0b0c10, #111218);
-  color: var(--text);
-  font-family: 'Segoe UI', sans-serif;
-  overflow-x: hidden;
-}
-
-section {
-  padding: 5rem 0;
-}
-
-/* ── Navbar ─────────────────────────────────────────────── */
-.navbar {
-  background: rgba(11, 12, 16, 0.95);
-  border-bottom: 1px solid var(--border);
-}
-
-.navbar-brand {
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: var(--accent) !important;
-}
-
-.navbar-toggler {
-  border-color: var(--border);
-}
-
-.nav-link {
-  color: var(--muted) !important;
-  transition: color 0.2s;
-}
-
-.nav-link:hover,
-.nav-link.active-nav {
-  color: var(--accent) !important;
-}
-
-/* ── Hero ───────────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 6rem 0;
-  position: relative;
-}
-
-.grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-}
-
-.hero-label {
-  color: var(--accent);
-  letter-spacing: 2px;
-  font-size: 13px;
-  margin-bottom: 10px;
-}
-
-.hero-name {
-  font-size: clamp(2.2rem, 6vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.hero-name span {
-  color: var(--accent);
-}
-
-.hero-tagline {
-  color: var(--muted);
-  max-width: 500px;
-  margin-top: 1rem;
-}
-
-
-.btn-gold {
-  background: var(--accent);
-  color: #000;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-block;
-  transition: opacity 0.2s;
-}
-
-.btn-gold:hover {
-  opacity: 0.85;
-  color: #000;
-}
-
-.btn-ghost {
-  border: 1px solid var(--border);
-  color: var(--text);
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
-  transition: border-color 0.2s;
-}
-
-.btn-ghost:hover {
-  border-color: var(--accent);
-  color: var(--text);
-}
-
-/* ── Section Titles ─────────────────────────────────────── */
-.sec-label {
-  color: var(--accent);
-  letter-spacing: 2px;
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.sec-title {
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.sec-line {
-  width: 50px;
-  height: 3px;
-  background: var(--accent);
-  margin-bottom: 2.5rem;
-  border: none;
-}
-
-/* ── Cards ──────────────────────────────────────────────── */
-.card-custom {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-}
-
-.project-card {
-  background: linear-gradient(145deg, #16171f, #1c1d26);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.5rem;
-}
-
-/* ── About ──────────────────────────────────────────────── */
-.info-pill {
-  display: inline-block;
-  font-size: 13px;
-  background: rgba(201, 169, 110, 0.1);
-  color: var(--accent);
-  border-radius: 20px;
-  padding: 4px 12px;
-  margin-right: 6px;
-  margin-top: 6px;
-}
-
-.stack-label {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-
-.tech-pill {
-  font-size: 12px;
-  padding: 5px 12px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid var(--border);
-  color: var(--text);
-}
-
-/* Lighter tier — things I've used but wouldn't call a strength */
-.tech-pill.muted {
-  background: transparent;
-  border-style: dashed;
-  color: var(--muted);
-}
-
-.pill-icon {
-  width: 16px;
-  height: 16px;
-  object-fit: contain;
-  margin-right: 6px;
-  vertical-align: middle;
-}
-
-/* ── Projects ───────────────────────────────────────────── */
-.proj-label {
-  color: #ffc107;
-  letter-spacing: 2px;
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.proj-divider {
-  width: 50px;
-  border: 2px solid #ffc107;
-  margin: 12px auto;
-  opacity: 1;
-}
-
-.proj-tagline {
-  font-style: italic;
-  color: #9aa0a6;
-  font-size: 14px;
-}
-
-.proj-bg-block {
-  border-top: 1px solid var(--border);
-  padding-top: 1rem;
-}
-
-.product-desc {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-.highlight {
-  color: #ffc107;
-}
-
-/* ── Kiosk Card ─────────────────────────────────────────── */
-.kiosk-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  will-change: transform;
-  text-decoration: none !important;
-  color: var(--text);
-}
-
-.kiosk-card:hover {
-  transform: translateY(-6px);
-  border-color: #c9a96e;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-  text-decoration: none !important;
-  color: var(--text);
-}
-a.kiosk-card {
-  text-decoration: none !important;
-}
-
-/* ── Cheesy Ball Card ────────────────────────────────────────── */
-.cheesy-preview-trigger {
-  cursor: pointer;
-  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
-}
-
-.cheesy-preview-trigger:hover {
-  transform: translateY(-6px);
-  border-color: #c9a96e;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-}
-
-.cheesy-poster {
-  border-radius: 14px;
-  overflow: hidden;
-  margin-bottom: 15px;
-  background: #111;
-}
-
-.cheesy-poster img {
-  transition: transform 0.35s;
-}
-
-.cheesy-preview-trigger:hover img {
-  transform: scale(1.04);
-}
-.modal-content {
-  background-color: #0f1117 !important;
-  color: #ffffff;
-}
-
-.modal-body p {
-  color: #cfcfcf !important;
-}
-
-.modal-body small {
-  color: #9aa0a6 !important;
-}
-
-.modal-body .fw-bold {
-  color: #ffffff !important;
-}
-
-.modal-body .badge {
-  background-color: #1c1f26 !important;
-  color: #eaeaea !important;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-.modal-content {
-  border-radius: 16px;
-}
-
-.modal-body img {
-  max-height: 520px;
-  object-fit: contain;
-}
-.project-card img {
-  border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-card img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.badge {
-  font-size: 11px;
-  margin-right: 5px;
-  color: #ccc;
-}
-.cheesy-card {
-  color: var(--text);
-  text-decoration: none;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.cheesy-card:hover {
-  border-color: #c9a96e;
-  box-shadow: 0 0 28px rgba(201, 169, 110, 0.25);
-  color: var(--text);
-}
-
-.cheesy-img-frame {
-  width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.04);
-  padding: 1.25rem 0;
-  margin-bottom: 1.5rem;
-}
-
-.cheesy-img-frame img {
-  width: 220px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.cheesy-img-frame img:hover {
-  box-shadow: 0 0 22px rgba(255, 193, 7, 0.55);
-  transform: scale(1.03);
-}
-
-.cheesy-divider {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  text-align: left;
-}
-
-/* ── Personal Site Card ─────────────────────────────────── */
-.site-shot {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  background: #0e0e0e;
-}
-
-.site-shot img {
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: transform 0.35s;
-}
-
-.site-shot:hover img {
-  transform: scale(1.03);
-}
-
-.site-icon {
-  font-size: 26px;
-  line-height: 1;
-}
-
-/* ── Certifications ─────────────────────────────────────── */
-.certs-wrap {
-  max-width: 660px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.cert-card {
-  background: linear-gradient(145deg, #16171f, #1c1d26);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 25px;
-  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.cert-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  color: var(--text);
-}
-
-.cert-icon {
-  width: 55px;
-  height: 55px;
-  flex-shrink: 0;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-}
-
-.cert-title  { font-weight: 600; font-size: 15px; }
-.cert-sub    { font-size: 13px; color: var(--muted); }
-.cert-date   { font-size: 12px; color: var(--muted); }
-
-.cert-pill {
-  font-size: 11px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  color: var(--muted);
-}
-
-.cert-pill.blue {
-  background: rgba(13, 110, 253, 0.15);
-  color: #7ab8ff;
-  border: none;
-}
-
-.cert-pill.gold {
-  background: rgba(201, 169, 110, 0.15);
-  color: var(--accent);
-  border: none;
-}
-
-/* ── Affiliations ───────────────────────────────────────── */
-.affil-icon {
-  font-size: 2rem;
-}
-.affil-icon img {
-  display: block;
-  margin: 0 auto;
-}
-/* ── Contact ────────────────────────────────────────────── */
-.contact-wrap {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.contact-item {
-  border: 1px solid var(--border);
-  background: var(--card);
-  transition: transform 0.3s, border-color 0.3s, background 0.3s;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.contact-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
-  background: rgba(201, 169, 110, 0.05);
-  color: var(--text);
-}
-
-/* ── Footer ─────────────────────────────────────────────── */
-footer {
-  border-top: 1px solid var(--border);
-  text-align: center;
-  padding: 20px;
-  color: var(--muted);
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Raywel Francis T. Martin | Portfolio</title>
+  <meta name="description" content="BSIT student and full-stack developer from Bulacan. Desktop apps in C#, web apps in plain JavaScript and Node.js, and an inventory system a real shop runs every day.">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="canonical" href="https://matimbu.github.io/portfolio/">
+
+  <!-- Link preview for LinkedIn, Messenger, Discord and X -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://matimbu.github.io/portfolio/">
+  <meta property="og:title" content="Raywel Francis T. Martin | Portfolio">
+  <meta property="og:description" content="BSIT student and full-stack developer. Desktop, web, and a point-of-sale system a real shop runs every day.">
+  <meta property="og:image" content="https://matimbu.github.io/portfolio/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232563eb'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='38' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts: Space Grotesk for headings, DM Sans for everything else -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Space+Grotesk:wght@500..700&display=swap">
+
+  <!-- Icons: Phosphor (regular weight), pinned to an exact version -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+  <link rel="stylesheet" href="style.css?v=1">
+
+  <script>
+    /* Runs before the page paints, so there's no flash of the wrong theme.
+       1. Pick the theme: the visitor's saved choice, else their system setting.
+       2. Decide whether to play the opening: first page load of the visit,
+          and only if the visitor hasn't asked for reduced motion.
+       3. Turn on the refracting lens in Chromium browsers. */
+    (function () {
+      var root = document.documentElement;
+      var theme = null;
+      try { theme = localStorage.getItem("theme"); } catch (e) {}
+      if (theme !== "light" && theme !== "dark") {
+        theme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      root.dataset.theme = theme;
+
+      var seen = null;
+      try { seen = sessionStorage.getItem("introSeen"); } catch (e) {}
+      if (!seen && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        root.classList.add("intro");
+        // Safety net: never leave the hero hidden if main.js fails to load
+        setTimeout(function () { root.classList.remove("intro", "intro-play"); }, 4000);
+      }
+
+      if (window.chrome) root.classList.add("refract");
+    })();
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<!-- ── NAVBAR ───────────────────────────────────────────────────────────── -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">RFM</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
+  <!-- Background layers: soft cobalt glows, and the light band for the theme switch -->
+  <div class="backdrop" aria-hidden="true"></div>
+  <div class="sheen" aria-hidden="true"></div>
+
+  <!-- The filter the theme lens uses to bend the page behind it (Chromium only) -->
+  <svg width="0" height="0" style="position: absolute" aria-hidden="true" focusable="false">
+    <filter id="lens-refract" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="noise" />
+      <feGaussianBlur in="noise" stdDeviation="1.5" result="map" />
+      <feDisplacementMap in="SourceGraphic" in2="map" scale="22" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="topbar">
+    <nav class="nav glass" aria-label="Main">
+      <a class="nav-brand" href="#hero">Raywel Martin</a>
+      <ul class="nav-links">
+        <li><a href="#about"><i class="ph ph-user" aria-hidden="true"></i><span>About</span></a></li>
+        <li><a href="#featured"><i class="ph ph-briefcase" aria-hidden="true"></i><span>Work</span></a></li>
+        <li><a href="#credentials"><i class="ph ph-certificate" aria-hidden="true"></i><span class="long">Certifications</span><span class="short">Certs</span></a></li>
+        <li><a href="#contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span>Contact</span></a></li>
+      </ul>
+    </nav>
+    <button class="lens glass" id="themeToggle" type="button" aria-label="Switch to dark theme">
+      <i class="ph ph-moon" aria-hidden="true"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <div class="ms-auto">
-        <a class="nav-link d-inline" href="#about">About</a>
-        <a class="nav-link d-inline" href="#featured">Projects</a>
-        <a class="nav-link d-inline" href="#credentials">Credentials</a>
-        <a class="nav-link d-inline" href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
-</nav>
+  </header>
 
-<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
-<section id="hero">
-  <div class="grid-bg"></div>
-  <div class="container position-relative">
-    <div class="row align-items-center">
-      <div class="col-lg-7">
 
-        <p class="hero-label">// BSIT Student — Desktop &amp; Web</p>
+  <main id="main">
 
-        <h1 class="hero-name">
-          Raywel <span>Francis</span><br>Martin
-        </h1>
-
-        <p class="hero-tagline">
-          I build desktop and web applications — mostly C# and WinForms, plus plain
-          HTML, CSS and JavaScript. Still learning, and building things is how I get there.
-        </p>
-
-        <div class="mt-4 d-flex gap-3 flex-wrap">
-          <a href="#featured" class="btn-gold">View Work</a>
-          <a href="#contact" class="btn-ghost">Contact</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── ABOUT ────────────────────────────────────────────────────────────── -->
-<section id="about">
-  <div class="container">
-
-    <p class="sec-label">// Who I Am</p>
-    <h2 class="sec-title">About Me</h2>
-    <div class="sec-line"></div>
-
-    <div class="row g-4">
-
-      <!-- Bio -->
-      <div class="col-lg-7">
-        <div class="card-custom h-100">
-          <p>
-            I'm <strong>Raywel Francis T. Martin</strong>, an IT student at STI College Malolos, from Bulacan.
-            I'm still early in learning to code, and it sticks best when I build something and work out
-            where I get stuck — also known on the court as
-            <span class="highlight">Yao Ming — The Court's Coder</span>.
-          </p>
-          <p>
-            Most of my time has gone into <strong>The Hive</strong>, a self-order kiosk written in C# and
-            WinForms. I didn't use a UI library, so I drew the buttons, tabs, and product tiles myself with
-            GDI+ — partly a design choice, partly because I wanted to understand how the rendering actually
-            worked. Building it alone meant working through the interface, the order flow, and the payment
-            logic one problem at a time. There's still plenty I'd do differently now.
-          </p>
-          <p>
-            I built this site in plain HTML, CSS, JavaScript, and Bootstrap, so I pay attention to how
-            things look as well as whether they run. I'd rather be clear about what I know well and what
-            I'm still learning. Right now I'm looking for OJT and junior developer roles, and I'm glad to
-            be pointed at things worth learning next.
-          </p>
-          <p class="mb-0">
-            <span class="info-pill">
-              <img src="images/sti-logo.png" alt="STI College Malolos" class="pill-icon">
-              STI College Malolos — BSIT
-            </span>
-
-            <span class="info-pill">
-              💼 Open to OJT / Junior Developer roles
-            </span>
-          </p>
-        </div>
-      </div>
-
-      <!--------------------------- Tech Stack ------------------------------>
-      <div class="col-lg-5">
-        <div class="card-custom h-100">
-
-          <p class="stack-label">// CORE</p>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="tech-pill">💻 C#</span>
-            <span class="tech-pill">🔷 .NET</span>
-            <span class="tech-pill">🪟 WinForms</span>
-            <span class="tech-pill">☕ Java</span>
-            <span class="tech-pill">🌐 HTML</span>
-            <span class="tech-pill">🎨 CSS</span>
-            <span class="tech-pill">⚡ JavaScript</span>
-            <span class="tech-pill">🧩 Bootstrap</span>
+    <!-- ================================ HERO ================================ -->
+    <section id="hero" class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-intro style="--n: 0">BSIT student · Full-stack developer</p>
+          <h1 class="hero-name" id="heroName">Raywel Francis Martin</h1>
+          <p class="hero-sub" data-intro style="--n: 1">I build desktop and web apps, servers and databases included. One of them runs a motorcycle parts shop every day.</p>
+          <div class="hero-ctas" data-intro style="--n: 2">
+            <a class="btn btn-primary" href="#featured">View work <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+            <a class="btn btn-glass glass" href="#contact">Contact</a>
+            <!-- Resume button: delete the word "hidden" once resume.pdf is in the
+                 repo root. Use a version without your home address. -->
+            <a class="btn btn-glass glass" href="resume.pdf" download hidden><i class="ph ph-download-simple" aria-hidden="true"></i> Résumé</a>
           </div>
+        </div>
 
-          <p class="stack-label mt-4">// FAMILIAR WITH</p>
-          <div class="d-flex flex-wrap gap-2">
-            <span class="tech-pill muted">🗄️ SQL / SQLite</span>
-            <span class="tech-pill muted">🔧 Git</span>
-            <span class="tech-pill muted">🎮 Unity 3D</span>
-            <span class="tech-pill muted">🏢 SAP S/4HANA</span>
-            <span class="tech-pill muted">🖌️ Figma</span>
+        <div class="hero-visual">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <figure class="shot shot-main glass" style="--n: 0">
+            <img src="images/motorparts/dashboard.png" width="1440" height="900" fetchpriority="high"
+                 alt="Motorparts Inventory dashboard with money in stock, today's sales, a seven-day sales chart and a restock list">
+          </figure>
+          <figure class="shot shot-kiosk glass" style="--n: 1">
+            <img src="images/kiosk/v2/welcome.png" width="480" height="720" alt="The Hive Cafe kiosk welcome screen">
+          </figure>
+          <figure class="shot shot-phone glass" style="--n: 2">
+            <img src="images/motorparts/phone-pos.png" width="780" height="1688" alt="Motorparts Inventory point of sale on a phone">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================================ ABOUT =============================== -->
+    <section id="about" class="section">
+      <div class="wrap">
+        <h2 class="section-title" data-reveal>About</h2>
+
+        <p class="about-lead" data-reveal>I'm Raywel Francis T. Martin, a BSIT student at STI College Malolos in Bulacan. I learn by building something real and working out where I get stuck.</p>
+
+        <div class="about-cols" data-reveal style="--d: 1">
+          <p>That has taken me from a self-order kiosk drawn by hand in C# to an inventory and point-of-sale system a motorcycle parts shop now runs every day. Most of it I learned one problem at a time.</p>
+          <p>I care about how things look as much as whether they run, and I'd rather be clear about what I know well and what I'm still learning. Right now I'm looking for OJT and junior developer roles.</p>
+        </div>
+
+        <div class="stack glass" data-reveal style="--d: 2">
+          <div>
+            <h3>Core</h3>
+            <ul class="chips">
+              <li>C#</li>
+              <li>.NET</li>
+              <li>WinForms</li>
+              <li>Java</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Node.js</li>
+              <li>SQL / SQLite</li>
+              <li>Bootstrap</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Familiar with</h3>
+            <ul class="chips chips-quiet">
+              <li>Next.js</li>
+              <li>Socket.IO</li>
+              <li>PostgreSQL</li>
+              <li>Git</li>
+              <li>Unity 3D</li>
+              <li>SAP S/4HANA</li>
+              <li>Figma</li>
+            </ul>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
 
-<!-- ── FEATURED PROJECTS ────────────────────────────────────────────────── -->
-<section id="featured">
-  <div class="container">
+    <!-- ================================ WORK ================================ -->
+    <!-- The id stays "featured": my personal site links to #featured. -->
+    <section id="featured" class="section">
+      <div class="wrap">
+        <h2 class="section-title" data-reveal>Work</h2>
 
-    <p class="sec-label text-center">// What I've Built</p>
-    <h2 class="sec-title text-center">Featured Projects</h2>
-    <div class="sec-line mx-auto"></div>
-
-    <div class="row g-4">
-
-      <!-- KIOSK -->
-      <div class="col-md-6">
-        <div class="card-custom cheesy-preview-trigger kiosk-card h-100"
-            data-bs-toggle="modal"
-            data-bs-target="#kioskModal">
-
-          <p class="proj-label">// System Project</p>
-          <div class="d-flex align-items-center gap-2">
-            <img src="images/hive-logo.jpg" alt="The Hive Cafe logo"
-                 class="rounded" style="width:32px; height:32px;">
-            <h4 class="fw-bold mb-0">The Hive Kiosk</h4>
+        <!-- Currently building: no screenshots yet, so a slim strip -->
+        <article class="now glass" data-reveal>
+          <p class="card-meta">Currently building · Solo</p>
+          <div>
+            <h3 class="now-title">CampusQue <span class="tag">In development</span></h3>
+            <p class="now-text">A queue system for the campus lobby. Take a number at the kiosk, watch it move on your phone, get called to the counter.</p>
           </div>
-          <hr class="proj-divider">
+          <ul class="chips chips-sm" aria-label="Built with">
+            <li>Next.js</li>
+            <li>Socket.IO</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </article>
 
-          <h6 class="proj-tagline">"One Screen. Order to Receipt."</h6>
+        <!-- Newest first. Each card opens its case study (a <dialog> below). -->
+        <div class="bento">
 
-          <p class="product-desc mt-3">
-            A real self-order kiosk built for The Hive Cafe — every button,
-            tab, and animation is hand-painted on raw GDI+, running inside
-            a single window from welcome screen to printed receipt.
-          </p>
-
-          <div class="row mt-3 text-start">
-            <div class="col-6">
-              <ul class="product-desc">
-                <li>No pop-ups — one shell window</li>
-                <li>Custom UI, no third-party library</li>
+          <article class="card glass span-2" data-reveal>
+            <div class="card-media">
+              <img src="images/motorparts/pos.png" width="1440" height="900" loading="lazy" alt="Motorparts Inventory point of sale with a cart">
+            </div>
+            <div class="card-body">
+              <p class="card-meta">2026 · Solo</p>
+              <h3 class="card-title">Motorparts Inventory</h3>
+              <p class="card-text">Inventory, point of sale and sales tracking for a motorcycle parts shop in Bulacan. It runs there every day.</p>
+              <ul class="chips chips-sm" aria-label="Built with">
+                <li>Node.js</li>
+                <li>SQLite</li>
+                <li>JavaScript</li>
               </ul>
+              <button class="card-open" type="button" data-open="case-motorparts" aria-haspopup="dialog">Read case study <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </div>
-            <div class="col-6">
-              <ul class="product-desc">
-                <li>46-item menu, 7 categories</li>
-                <li>Cash, card &amp; e-wallet checkout</li>
+          </article>
+
+          <article class="card glass" data-reveal style="--d: 1">
+            <div class="card-media media-site">
+              <img src="images/personal-site.png" width="1440" height="900" loading="lazy" alt="Home screen of my personal site: my name in large type, surrounded by photos of me">
+            </div>
+            <div class="card-body">
+              <p class="card-meta">2026 · Solo</p>
+              <h3 class="card-title">Off the Clock</h3>
+              <p class="card-text">My personal site, for everything a developer portfolio leaves out.</p>
+              <ul class="chips chips-sm" aria-label="Built with">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
               </ul>
+              <button class="card-open" type="button" data-open="case-site" aria-haspopup="dialog">Read case study <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
             </div>
-          </div>
+          </article>
 
-          <div class="proj-bg-block mt-3">
-            <p class="fw-bold mb-1">Project Background</p>
-            <p class="product-desc mb-0">
-              Started from a bare WinForms template and built out into a
-              full point-of-sale flow — menu, cart, payment, and a
-              till-style receipt — as my first solo project.
-            </p>
-          </div>
+          <article class="card glass" data-reveal>
+            <div class="card-media media-aurora" aria-hidden="true"></div>
+            <div class="card-body">
+              <p class="card-meta">2026 · Group capstone <span class="tag">In progress</span></p>
+              <h3 class="card-title">Malolos Rush</h3>
+              <p class="card-text">Our capstone game in Unity. I'm the 3D designer and lead project manager, and I write the capstone paper.</p>
+              <ul class="chips chips-sm" aria-label="Built with">
+                <li>Unity 3D</li>
+                <li>3D design</li>
+                <li>Project lead</li>
+              </ul>
+              <button class="card-open" type="button" data-open="case-rush" aria-haspopup="dialog">Read case study <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+            </div>
+          </article>
 
-          <div class="mt-3 d-flex gap-2 flex-wrap">
-            <span class="cert-pill gold">C#</span>
-            <span class="cert-pill gold">WinForms</span>
-            <span class="cert-pill gold">GDI+</span>
-          </div>
+          <article class="card glass span-2" data-reveal style="--d: 1">
+            <div class="card-media media-kiosk">
+              <img src="images/kiosk/v2/welcome.png" width="480" height="720" loading="lazy" alt="Kiosk welcome screen">
+              <img src="images/kiosk/v2/menu.png" width="480" height="720" loading="lazy" alt="Kiosk menu with category tabs">
+              <img src="images/kiosk/v2/product.png" width="480" height="720" loading="lazy" alt="Kiosk product customisation">
+            </div>
+            <div class="card-body">
+              <p class="card-meta">2026 · Group project</p>
+              <h3 class="card-title">The Hive Kiosk</h3>
+              <p class="card-text">A self-order kiosk for The Hive Cafe, every screen drawn by hand on GDI+. In our group project, my teammates built the main POS and I built the kiosk.</p>
+              <ul class="chips chips-sm" aria-label="Built with">
+                <li>C#</li>
+                <li>WinForms</li>
+                <li>GDI+</li>
+              </ul>
+              <button class="card-open" type="button" data-open="case-kiosk" aria-haspopup="dialog">Read case study <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+            </div>
+          </article>
+
+          <article class="card glass span-3" data-reveal>
+            <div class="card-media media-poster">
+              <img src="images/CHEESY%20POTATO%20BALLS.png" width="1153" height="437" loading="lazy" alt="Cheesy Potato Balls marketing poster">
+            </div>
+            <div class="card-body">
+              <p class="card-meta">2023 · Design</p>
+              <h3 class="card-title">Cheesy Potato Balls poster</h3>
+              <p class="card-text">A marketing poster for a small food business, made in Photoshop. Bold type, warm colours and the product up front.</p>
+              <ul class="chips chips-sm" aria-label="Made with">
+                <li>Photoshop</li>
+                <li>Graphic design</li>
+              </ul>
+              <button class="card-open" type="button" data-open="case-poster" aria-haspopup="dialog">View poster <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+            </div>
+          </article>
 
         </div>
       </div>
-      <!-- CHEESY BALLS -->
-      <div class="col-md-6">
-        <div class="project-card cheesy-preview-trigger h-100 text-center"
-            data-bs-toggle="modal"
-            data-bs-target="#cheesyModal">
+    </section>
 
-          <!-- Poster -->
-          <div class="cheesy-poster">           
-              <img src="images/CHEESY POTATO BALLS.png"
-                  class="img-fluid rounded shadow-lg"
-                  style="max-height:520px; cursor:pointer;">           
-          </div>
 
-          <!-- Tags -->
-          <div class="mb-2">
-            <span class="badge bg-dark border">Photoshop</span>
-            <span class="badge bg-dark border">Graphic Design</span>
-            <span class="badge bg-dark border">Marketing</span>
-          </div>
-
-          <!-- Title -->
-          <h5 class="fw-bold">Cheesy Potato Balls — Marketing Poster</h5>
-
-          <!-- Short Desc -->
-          <p class="product-desc">
-            Click to preview full design
-          </p>
-
-        </div>
+    <!-- ============================ CERTIFICATIONS =========================== -->
+    <section id="credentials" class="section">
+      <div class="wrap">
+        <h2 class="section-title" data-reveal>Certifications</h2>
+        <ol class="certs">
+          <li data-reveal>
+            <a class="cert glass" href="certificate_ai-career-readiness.png" target="_blank" rel="noopener">
+              <span class="cert-logo"><img src="images/aseanhead-logo.png" width="69" height="69" alt=""></span>
+              <span class="cert-title">AI Career Readiness Training</span>
+              <span class="cert-sub">ASEAN Foundation, supported by LinkedIn</span>
+              <span class="cert-side">Sep 4, 2026 <i class="ph ph-arrow-up-right cert-arrow" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li data-reveal style="--d: 1">
+            <a class="cert glass" href="certificate_sap.pdf" target="_blank" rel="noopener">
+              <span class="cert-logo"><img src="images/logos/sap.png" width="128" height="128" alt=""></span>
+              <span class="cert-title">SD, MM, PP, FI, CO Modules of SAP S/4HANA using Global Bike</span>
+              <span class="cert-sub">STI College, with SAP University Alliances</span>
+              <span class="cert-side">Jan 20 - Jun 7, 2025 <i class="ph ph-arrow-up-right cert-arrow" aria-hidden="true"></i></span>
+            </a>
+          </li>
+          <li data-reveal style="--d: 2">
+            <a class="cert glass" href="certificate_java.pdf" target="_blank" rel="noopener">
+              <span class="cert-logo"><img src="images/logos/java.png" width="128" height="128" alt=""></span>
+              <span class="cert-title">Java Fundamentals</span>
+              <span class="cert-sub">Oracle Academy</span>
+              <span class="cert-side">Jun 19, 2024 <i class="ph ph-arrow-up-right cert-arrow" aria-hidden="true"></i></span>
+            </a>
+          </li>
+        </ol>
       </div>
-      <!-- PERSONAL SITE -->
-      <div class="col-12">
-        <div class="card-custom kiosk-card">
-          <div class="row g-4 align-items-center">
+    </section>
 
-            <div class="col-lg-6">
-              <a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener" class="site-shot d-block">
-                <img src="images/personal-site.png?v=2"
-                     alt="Home screen of my personal site: my name in large serif type, surrounded by four photos of me">
-              </a>
+
+    <!-- ============================= AFFILIATIONS ============================ -->
+    <section id="affiliations" class="section section-tight">
+      <div class="wrap">
+        <h2 class="section-title" data-reveal>Affiliations</h2>
+        <ul class="affils glass" data-reveal>
+          <li>
+            <img src="images/logos/sti.png" width="128" height="76" alt="">
+            <div>
+              <strong><a href="https://www.facebook.com/malolos.sti.edu" target="_blank" rel="noopener">STI College Malolos</a></strong>
+              <span>BS Information Technology student</span>
             </div>
-
-            <div class="col-lg-6">
-              <p class="proj-label">// Self Project</p>
-              <div class="d-flex align-items-center gap-2">
-                <span class="site-icon" aria-hidden="true">🏀</span>
-                <h4 class="fw-bold mb-0">Off the Clock</h4>
-              </div>
-              <hr class="proj-divider ms-0">
-
-              <h6 class="proj-tagline">"Everything My Portfolio Leaves Out."</h6>
-
-              <p class="product-desc mt-3">
-                A personal site I made on my own time — the things I make,
-                what I do for fun, what I believe in, and where to find me,
-                plus a photo gallery, a story timeline, and my YouTube and
-                TikTok clips. Plain HTML, CSS and JavaScript, with Lenis for
-                smooth scrolling.
-              </p>
-
-              <div class="row mt-3 text-start">
-                <div class="col-6">
-                  <ul class="product-desc">
-                    <li>All text in one content file</li>
-                    <li>Drafts hidden on the live site</li>
-                    <li>Photos resized, GPS data stripped</li>
-                  </ul>
-                </div>
-                <div class="col-6">
-                  <ul class="product-desc">
-                    <li>Full-size photos load on open</li>
-                    <li>Light / dark theme, remembered</li>
-                    <li>Respects reduced-motion settings</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="proj-bg-block mt-3">
-                <p class="fw-bold mb-1">Project Background</p>
-                <p class="product-desc mb-0">
-                  Started out of boredom, as a home for the side of me a
-                  developer portfolio doesn't cover — basketball, Valorant,
-                  design, and the videos I make with friends.
-                </p>
-              </div>
-
-              <div class="mt-3 d-flex gap-2 flex-wrap">
-                <span class="cert-pill gold">HTML</span>
-                <span class="cert-pill gold">CSS</span>
-                <span class="cert-pill gold">JavaScript</span>
-              </div>
-
-              <div class="mt-4 d-flex gap-3 flex-wrap">
-                <a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener" class="btn-gold">Visit Site</a>
-                <a href="https://github.com/Matimbu/raywelfrancismartin" target="_blank" rel="noopener" class="btn-ghost">View Code</a>
-              </div>
+          </li>
+          <li>
+            <img src="images/logos/sap.png" width="128" height="128" alt="">
+            <div>
+              <strong>SAP University Alliances</strong>
+              <span>S/4HANA ERP training through STI</span>
             </div>
-
-          </div>
-        </div>
+          </li>
+          <li>
+            <img src="images/logos/java.png" width="128" height="128" alt="">
+            <div>
+              <strong>Oracle Academy</strong>
+              <span>Java Fundamentals, student program</span>
+            </div>
+          </li>
+        </ul>
       </div>
+    </section>
 
+
+    <!-- ================================ CONTACT ============================== -->
+    <section id="contact" class="section">
+      <div class="wrap contact-grid">
+        <div>
+          <h2 class="section-title" data-reveal>Contact</h2>
+          <p class="contact-lead" data-reveal>I'm looking for OJT and junior developer roles. Email is the quickest way to reach me, or send a message here.</p>
+          <ul class="links" data-reveal style="--d: 1">
+            <li><a href="mailto:raywelfrancismartin@gmail.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span><span class="link-label">Email</span><span class="link-value">raywelfrancismartin@gmail.com</span></span></a></li>
+            <li><a href="https://www.linkedin.com/in/raywel-francis-martin-07a73b3b8/" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" aria-hidden="true"></i><span><span class="link-label">LinkedIn</span><span class="link-value">Raywel Francis Martin</span></span></a></li>
+            <li><a href="https://github.com/Matimbu" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i><span><span class="link-label">GitHub</span><span class="link-value">Matimbu</span></span></a></li>
+            <li><a href="https://instagram.com/_matimbu" target="_blank" rel="noopener"><i class="ph ph-instagram-logo" aria-hidden="true"></i><span><span class="link-label">Instagram</span><span class="link-value">@_matimbu</span></span></a></li>
+            <li><a href="https://discord.com/users/736265496479006811" target="_blank" rel="noopener"><i class="ph ph-discord-logo" aria-hidden="true"></i><span><span class="link-label">Discord</span><span class="link-value">Matimbu</span></span></a></li>
+            <li><a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener"><i class="ph ph-globe-simple" aria-hidden="true"></i><span><span class="link-label">Personal site</span><span class="link-value">Off the Clock</span></span></a></li>
+          </ul>
+        </div>
+
+        <!-- Message form. Sends through Formspree once FORMSPREE_ID is set in
+             main.js; until then it opens the visitor's email app instead. -->
+        <form class="form glass" id="contactForm" novalidate data-reveal style="--d: 2">
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <p class="field-error" id="f-name-err" hidden>Enter your name.</p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-err">
+            <p class="field-error" id="f-email-err" hidden>Enter a valid email so I can reply.</p>
+          </div>
+          <div class="field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="5" required aria-describedby="f-message-err"></textarea>
+            <p class="field-error" id="f-message-err" hidden>Write a short message.</p>
+          </div>
+          <!-- Spam trap: people never see this field, bots fill it in -->
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-primary" type="submit">Send message <i class="ph ph-paper-plane-tilt" aria-hidden="true"></i></button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================================ FOOTER =============================== -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> Raywel Francis Martin</p>
+      <p>Built with plain HTML, CSS and JavaScript.</p>
+      <a href="#hero">Back to top <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ── CREDENTIALS ──────────────────────────────────────────────────────── -->
-<section id="credentials">
-  <div class="container">
 
-    <p class="sec-label text-center">// Credentials</p>
-    <h2 class="sec-title text-center">Certifications</h2>
-    <div class="sec-line mx-auto"></div>
+  <!-- ============================ CASE STUDIES ============================= -->
+  <!-- One <dialog> per project. main.js opens them from the cards. -->
 
-    <div class="certs-wrap">
-
-      <!-- AI CAREER READINESS -->
-      <a href="certificate_ai-career-readiness.png" target="_blank" class="cert-card d-block">
-        <div class="d-flex gap-4 align-items-start">
-          <div class="cert-icon" style="background: #fff;">
-            <img src="images/aseanhead-logo.png" style="width:40px; height:40px; object-fit:contain;" alt="ASEAN Foundation">
-          </div>
-          <div class="flex-grow-1">
-            <div class="cert-title">AI Career Readiness Training</div>
-            <div class="cert-sub mt-2">ASEAN Foundation — supported by LinkedIn</div>
-            <div class="cert-date mt-2">📅 September 4, 2026</div>
-            <div class="d-flex flex-wrap gap-2 mt-3">
-              <span class="cert-pill">Certificate of Completion</span>
-              <span class="cert-pill blue">ASEAN Foundation</span>
-              <span class="cert-pill">Online Training</span>
-            </div>
-            <div class="d-flex flex-wrap gap-2 mt-2">
-              <span class="cert-pill gold">AI</span>
-              <span class="cert-pill gold">Career Readiness</span>
-            </div>
-          </div>
+  <dialog class="case" id="case-motorparts" aria-labelledby="case-motorparts-title">
+    <div class="case-inner">
+      <div class="case-head">
+        <div>
+          <p class="card-meta">2026 · Solo</p>
+          <h3 class="case-title" id="case-motorparts-title">Motorparts Inventory</h3>
         </div>
-      </a>
-
-      <!-- SAP -->
-      <a href="certificate_sap.pdf" target="_blank" class="cert-card d-block">
-        <div class="d-flex gap-4 align-items-start">
-          <div class="cert-icon">
-            <img src="images/sap-logo.png" style="width:30px;" alt="SAP">
-          </div>
-          <div class="flex-grow-1">
-            <div class="cert-title">SD, MM, PP, FI, CO Modules of SAP S/4HANA using Global Bike</div>
-            <div class="cert-sub mt-2">STI College, Philippines — SAP University Alliances</div>
-            <div class="cert-date mt-2">📅 January 20, 2025 — June 7, 2025</div>
-            <div class="d-flex flex-wrap gap-2 mt-3">
-              <span class="cert-pill">Certificate of Participation</span>
-              <span class="cert-pill blue">SAP University Alliances</span>
-              <span class="cert-pill">ERP Training</span>
-            </div>
-            <div class="d-flex flex-wrap gap-2 mt-2">
-              <span class="cert-pill gold">SD</span>
-              <span class="cert-pill gold">MM</span>
-              <span class="cert-pill gold">PP</span>
-              <span class="cert-pill gold">FI</span>
-              <span class="cert-pill gold">CO</span>
-            </div>
-          </div>
+        <button class="case-close" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
+      </div>
+      <p class="case-lead">Inventory, point of sale and sales tracking for a small motorcycle parts shop in Bulacan. It started as a system for a real shop, and it runs there every day.</p>
+      <div class="case-cols">
+        <div>
+          <h4>What it does</h4>
+          <ul class="ticks">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Tap a bike model like NMAX or Click to see every part that fits it.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>A fast counter POS that won't oversell, won't ring up an item at ₱0, and warns when a discount goes below cost.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Returns from a receipt: stock goes back, and the refund counts on the day it's given.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Daily closing with a bill-by-bill cash count, and reports net of returns.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Reads the owner's Google Sheet one way, so they keep the spreadsheet they already use.</li>
+          </ul>
         </div>
-      </a>
-
-      <!-- JAVA -->
-      <a href="certificate_java.pdf" target="_blank" class="cert-card d-block">
-        <div class="d-flex gap-4 align-items-start">
-          <div class="cert-icon" style="background: linear-gradient(135deg,#f7971e,#ffd200); padding: 6px;">
-            <img src="images/java-logo.png" style="width:40px; height:40px; object-fit:contain;">
-          </div>
-          <div class="flex-grow-1">
-            <div class="cert-title">Java Fundamentals</div>
-            <div class="cert-sub mt-2">Oracle Academy</div>
-            <div class="cert-date mt-2">📅 June 19, 2024</div>
-            <div class="d-flex flex-wrap gap-2 mt-3">
-              <span class="cert-pill">Course Completion</span>
-              <span class="cert-pill blue">Oracle Academy</span>
-              <span class="cert-pill">Programming</span>
-            </div>
-            <div class="d-flex flex-wrap gap-2 mt-2">
-              <span class="cert-pill gold">Java</span>
-              <span class="cert-pill gold">OOP</span>
-              <span class="cert-pill gold">Fundamentals</span>
-            </div>
-          </div>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── AFFILIATIONS ──────────────────────────────────────────────────────── -->
-<section id="affiliations">
-  <div class="container">
-
-    <p class="sec-label text-center">// Community</p>
-    <h2 class="sec-title text-center">Affiliations</h2>
-    <div class="sec-line mx-auto"></div>
-
-    <div class="row g-4 justify-content-center">
-
-      <div class="col-md-4">
-        <div class="card-custom text-center h-100">
-          <div class="affil-icon">🎓</div>
-          <h6 class="fw-bold mt-3">STI College Malolos</h6>
-          <p class="product-desc mb-0">Bachelor of Science in Information Technology — Active student member</p>
+        <div>
+          <h4>How it's built</h4>
+          <ul class="ticks">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>One server file using Node's built-in http and SQLite. No dependencies, no npm install.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>A plain JavaScript front end with hash routing. No framework, no build step.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Phone-first and installable to the home screen, with staff and admin roles.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Forced password change on first login, lockout after wrong passwords, and a strict Content Security Policy.</li>
+          </ul>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="card-custom text-center h-100">
-          <div class="affil-icon">🔷</div>
-          <h6 class="fw-bold mt-3">SAP University Alliances</h6>
-          <p class="product-desc mb-0">Participant in SAP S/4HANA ERP training program via STI</p>
-        </div>
+      <div class="shots">
+        <figure><img src="images/motorparts/fits-bike.png" width="1440" height="900" loading="lazy" alt="Point of sale showing the parts that fit a chosen bike"><figcaption>Parts that fit a chosen bike</figcaption></figure>
+        <figure><img src="images/motorparts/daily-closing.png" width="1440" height="900" loading="lazy" alt="Daily closing screen with a cash count"><figcaption>Daily closing and cash count</figcaption></figure>
+        <figure><img src="images/motorparts/reorder-list.png" width="1440" height="900" loading="lazy" alt="Reorder list of low and out-of-stock parts"><figcaption>Reorder list for the supplier</figcaption></figure>
+        <figure><img src="images/motorparts/phone-pos.png" width="780" height="1688" loading="lazy" alt="The point of sale on a phone"><figcaption>The POS on a phone</figcaption></figure>
       </div>
-
-      <div class="col-md-4">
-        <div class="card-custom text-center h-100">
-          <div class="affil-icon">
-            <img src="images/java-logo.png" style="width:40px; height:40px; object-fit:contain;">
-          </div>
-          <h6 class="fw-bold mt-3">Oracle Academy</h6>
-          <p class="product-desc mb-0">Completed Java Fundamentals under Oracle Academy's student program</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ── GITHUB ────────────────────────────────────────────────────────────── -->
-<section id="github">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card-custom text-center">
-          <h4 class="fw-bold mb-2">My GitHub</h4>
-          <p class="product-desc mb-4">Check out my projects and code</p>
-          <a href="https://github.com/Matimbu" target="_blank" class="btn-gold">Visit GitHub</a>
-        </div>
+      <p class="case-note">The public demo runs on generated data, so nothing in it belongs to the shop. The demo login is in the README.</p>
+      <div class="case-links">
+        <a class="btn btn-primary" href="https://motorparts-inventory-demo.up.railway.app" target="_blank" rel="noopener">Live demo <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a class="btn btn-glass glass" href="https://github.com/Matimbu/motorparts-inventory" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Code</a>
       </div>
     </div>
-  </div>
-</section>
+  </dialog>
 
-<!-- ── CONTACT ───────────────────────────────────────────────────────────── -->
-<section id="contact">
-  <div class="container">
-
-    <p class="sec-label text-center">// Get In Touch</p>
-    <h2 class="sec-title text-center">Contact</h2>
-    <div class="sec-line mx-auto"></div>
-
-    <div class="contact-wrap">
-
-      <p class="mb-4" style="color: var(--muted);">
-        Got a project idea, a collaboration proposal, or want to talk basketball?
-        Drop me a message — I don't bite 😄
-      </p>
-
-      <a href="mailto:raywelfrancismartin@gmail.com" class="contact-item d-block mb-3 p-3 rounded">
-        <small style="color: var(--muted);">Email</small><br>
-        <strong>📩 raywelfrancismartin@gmail.com</strong>
-      </a>
-
-      <a href="https://www.linkedin.com/in/raywel-francis-martin-07a73b3b8/" target="_blank" class="contact-item d-block mb-3 p-3 rounded">
-        <small style="color: var(--muted);">LinkedIn</small><br>
-        <strong>💼 Raywel Francis Martin</strong>
-      </a>
-
-      <a href="https://instagram.com/_matimbu" target="_blank" class="contact-item d-block mb-3 p-3 rounded">
-        <small style="color: var(--muted);">Instagram</small><br>
-        <strong>@_matimbu</strong>
-      </a>
-
-      <a href="https://discord.com/users/736265496479006811" target="_blank" class="contact-item d-block mb-3 p-3 rounded">
-        <small style="color: var(--muted);">Discord</small><br>
-        <strong>Matimbu</strong>
-      </a>
-
-      <a href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" class="contact-item d-block mb-3 p-3 rounded">
-        <small style="color: var(--muted);">Personal Site</small><br>
-        <strong>🏀 Off the clock — hobbies, crafts &amp; videos</strong>
-      </a>
-
-      <a href="https://www.facebook.com/malolos.sti.edu" target="_blank" class="contact-item d-block mb-3 p-3 rounded">
-        <small style="color: var(--muted);">School</small><br>
-        <strong>STI College Malolos — BSIT</strong>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p class="mb-0">© 2026 Raywel Francis Martin</p>
-</footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- CHEESY MODAL -->
-<div class="modal fade" id="cheesyModal" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark text-light border-0">
-
-      <!-- Close -->
-      <div class="modal-header border-0">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <dialog class="case" id="case-site" aria-labelledby="case-site-title">
+    <div class="case-inner">
+      <div class="case-head">
+        <div>
+          <p class="card-meta">2026 · Solo</p>
+          <h3 class="case-title" id="case-site-title">Off the Clock</h3>
+        </div>
+        <button class="case-close" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
       </div>
-
-      <div class="modal-body">
-
-        <!-- CLICKABLE IMAGE -->
-        <div class="text-center mb-4">
-          <a href="images/CHEESY POTATO BALLS.png" target="_blank">
-            <img src="images/CHEESY POTATO BALLS.png"
-                 class="img-fluid rounded shadow-lg"
-                 style="max-height:520px; cursor:pointer">
-          </a>
-
-          <!-- Hint -->
-          <p class="text-muted mt-2" style="font-size: 13px;">
-            Click image to view full size
-          </p>
+      <p class="case-lead">My personal site: the things I make, what I do for fun, what I believe in, and where to find me. This portfolio is the professional side, and that site is everything else.</p>
+      <div class="case-cols">
+        <div>
+          <h4>What's on it</h4>
+          <ul class="ticks">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>A photo gallery that loads small images first, and the full size only when you open one.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>A story timeline, Valorant and basketball walls, and my YouTube and TikTok clips.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>A small playable teaser for Malolos Rush.</li>
+          </ul>
         </div>
-
-        <!-- Tags -->
-        <div class="text-center mb-3">
-          <span class="badge bg-secondary">Photoshop</span>
-          <span class="badge bg-secondary">Graphic Design</span>
-          <span class="badge bg-secondary">Marketing</span>
+        <div>
+          <h4>How it's built</h4>
+          <ul class="ticks">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Plain HTML, CSS and JavaScript, with Lenis for smooth scrolling.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Every word lives in one content file. Drafts marked TODO only show when I preview locally.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Photos are resized, colour-graded and stripped of GPS data before they go online.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Light and dark themes, and it respects reduced-motion settings.</li>
+          </ul>
         </div>
-
-        <!-- Title -->
-        <h2 class="text-center fw-bold">
-          Cheesy Potato Balls — Marketing Poster
-        </h2>
-
-        <!-- Description -->
-        <p class="text-center text-muted mt-3 mx-auto" style="max-width:700px;">
-          A food marketing graphic design created in 2023 for a sales food business.
-          Designed to be eye-catching and appetizing using bold typography,
-          warm color gradients, and product-focused layout.
-          This project highlights my creativity beyond coding — combining branding,
-          layout, and visual storytelling.
-        </p>
-
-        <hr class="my-4">
-
-        <!-- Info -->
-        <div class="row text-center">
-          <div class="col-md-4">
-            <small class="text-muted">Software</small>
-            <div class="fw-bold">Adobe Photoshop</div>
-          </div>
-
-          <div class="col-md-4">
-            <small class="text-muted">Category</small>
-            <div class="fw-bold">Marketing Design</div>
-          </div>
-
-          <div class="col-md-4">
-            <small class="text-muted">Year</small>
-            <div class="fw-bold">2023</div>
-          </div>
-        </div>
-
+      </div>
+      <img class="case-image" src="images/personal-site.png" width="1440" height="900" loading="lazy" alt="Home screen of my personal site">
+      <div class="case-links">
+        <a class="btn btn-primary" href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener">Visit site <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+        <a class="btn btn-glass glass" href="https://github.com/Matimbu/raywelfrancismartin" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Code</a>
       </div>
     </div>
-  </div>
-</div>
+  </dialog>
 
-<div class="modal fade" id="kioskModal" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content bg-dark text-light border-0">
-
-      <!-- Close -->
-      <div class="modal-header border-0">
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+  <dialog class="case" id="case-rush" aria-labelledby="case-rush-title">
+    <div class="case-inner">
+      <div class="case-head">
+        <div>
+          <p class="card-meta">2026 · Group capstone <span class="tag">In progress</span></p>
+          <h3 class="case-title" id="case-rush-title">Malolos Rush</h3>
+        </div>
+        <button class="case-close" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
       </div>
-
-      <div class="modal-body">
-
-        <!-- SCREENSHOT CAROUSEL -->
-        <div id="kioskCarousel" class="carousel slide mb-2">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#kioskCarousel" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#kioskCarousel" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#kioskCarousel" data-bs-slide-to="2"></button>
-            <button type="button" data-bs-target="#kioskCarousel" data-bs-slide-to="3"></button>
-            <button type="button" data-bs-target="#kioskCarousel" data-bs-slide-to="4"></button>
-            <button type="button" data-bs-target="#kioskCarousel" data-bs-slide-to="5"></button>
-          </div>
-          <div class="carousel-inner text-center">
-            <div class="carousel-item active">
-              <img src="images/kiosk/01-welcome.png" class="img-fluid rounded shadow-lg" style="max-height:520px;">
-            </div>
-            <div class="carousel-item">
-              <img src="images/kiosk/02-menu.png" class="img-fluid rounded shadow-lg" style="max-height:520px;">
-            </div>
-            <div class="carousel-item">
-              <img src="images/kiosk/03-product.png" class="img-fluid rounded shadow-lg" style="max-height:520px;">
-            </div>
-            <div class="carousel-item">
-              <img src="images/kiosk/04-cart.png" class="img-fluid rounded shadow-lg" style="max-height:520px;">
-            </div>
-            <div class="carousel-item">
-              <img src="images/kiosk/05-payment.png" class="img-fluid rounded shadow-lg" style="max-height:520px;">
-            </div>
-            <div class="carousel-item">
-              <img src="images/kiosk/06-receipt.png" class="img-fluid rounded shadow-lg" style="max-height:520px;">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#kioskCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#kioskCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-
-        <!-- Hint -->
-        <p class="text-muted mt-2 text-center" style="font-size: 13px;">
-          Welcome → menu → order → payment → receipt — swipe or use the arrows
-        </p>
-
-        <!-- Tags -->
-        <div class="text-center mb-3 mt-3">
-          <span class="badge bg-secondary">C#</span>
-          <span class="badge bg-secondary">WinForms</span>
-          <span class="badge bg-secondary">GDI+</span>
-        </div>
-
-        <!-- Title -->
-        <h2 class="text-center fw-bold">
-          The Hive Kiosk — Self-Order System
-        </h2>
-
-        <!-- Description -->
-        <p class="text-center text-muted mt-3 mx-auto" style="max-width:700px;">
-          A touchscreen ordering kiosk for a real cafe. Browse the menu, build
-          an order, and pay by cash, card, or e-wallet — every screen hand-painted
-          on raw GDI+, no third-party UI library.
-        </p>
-
-        <hr class="my-4">
-
-        <!-- Info -->
-        <div class="row text-center">
-          <div class="col-md-4">
-            <small class="text-muted">Stack</small>
-            <div class="fw-bold">C# · WinForms</div>
-          </div>
-
-          <div class="col-md-4">
-            <small class="text-muted">Category</small>
-            <div class="fw-bold">Point-of-Sale Kiosk</div>
-          </div>
-
-          <div class="col-md-4">
-            <small class="text-muted">Status</small>
-            <div class="fw-bold">Complete</div>
-          </div>
-        </div>
-
-        <!-- Repository -->
-        <div class="text-center mt-4">
-          <a href="https://github.com/Matimbu/kiosk-TheHive" target="_blank" class="btn-ghost">
-            View Repository →
-          </a>
-        </div>
-
+      <p class="case-lead">Our capstone game, built in Unity with my group. It's still in progress, so there are no public screenshots yet.</p>
+      <div class="case-block">
+        <h4>My part</h4>
+        <ul class="ticks">
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i>3D designer for the game.</li>
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i>Lead project manager: I plan the work and lead the members.</li>
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i>I write the capstone paper.</li>
+        </ul>
+      </div>
+      <div class="case-links">
+        <a class="btn btn-primary" href="https://matimbu.github.io/raywelfrancismartin/#crafts" target="_blank" rel="noopener">Play the teaser <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
-  </div>
-</div>
+  </dialog>
+
+  <dialog class="case" id="case-kiosk" aria-labelledby="case-kiosk-title">
+    <div class="case-inner">
+      <div class="case-head">
+        <div>
+          <p class="card-meta">2026 · Group project</p>
+          <h3 class="case-title" id="case-kiosk-title">The Hive Kiosk</h3>
+        </div>
+        <button class="case-close" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
+      </div>
+      <p class="case-lead">A self-order kiosk for The Hive Cafe, built in C# and WinForms. It was a group project: my teammates built the main POS system, and I built the kiosk on my own.</p>
+      <div class="case-cols">
+        <div>
+          <h4>What it does</h4>
+          <ul class="ticks">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Seven category tabs, choices for size, temperature and sweetness, and a cart you can edit line by line.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>English and Filipino, switchable at any point in the order.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Sold-out items stay visible but can't be ordered, and checkout checks again.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Cash orders get a daily order number to pay at the counter. Card and e-wallet are demo flows, since there's no payment processor.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>It resets after two minutes idle, so the next guest never inherits an order.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>How it's built</h4>
+          <ul class="ticks">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Every button, tab and tile is drawn by hand with GDI+. No third-party UI library.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Orders and availability are saved locally, with a PIN-protected staff screen.</li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i>Smoke tests check the cart and checkout rules, and render the main screens for layout review.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="shots">
+        <figure><img src="images/kiosk/v2/welcome.png" width="480" height="720" loading="lazy" alt="Kiosk welcome screen"><figcaption>Welcome screen</figcaption></figure>
+        <figure><img src="images/kiosk/v2/menu.png" width="480" height="720" loading="lazy" alt="Kiosk menu with category tabs"><figcaption>Menu with category tabs</figcaption></figure>
+        <figure><img src="images/kiosk/v2/product.png" width="480" height="720" loading="lazy" alt="Customising a product before adding it"><figcaption>Customising an item</figcaption></figure>
+        <figure><img src="images/kiosk/v2/language.png" width="1008" height="770" loading="lazy" alt="The menu in English, and right after switching to Filipino"><figcaption>English, then right after switching to Filipino</figcaption></figure>
+        <figure><img src="images/kiosk/v2/receipt.png" width="1504" height="770" loading="lazy" alt="Three receipts: the old order code, the new daily order number, and the Filipino version"><figcaption>The old order code, the new daily number, and Filipino</figcaption></figure>
+      </div>
+      <div class="case-block">
+        <h4>Looking back</h4>
+        <p>I drew the interface myself partly to understand how rendering actually works. There's still plenty I'd do differently now.</p>
+      </div>
+      <div class="case-links">
+        <a class="btn btn-glass glass" href="https://github.com/Matimbu/kiosk-TheHive" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Code</a>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="case" id="case-poster" aria-labelledby="case-poster-title">
+    <div class="case-inner">
+      <div class="case-head">
+        <div>
+          <p class="card-meta">2023 · Design</p>
+          <h3 class="case-title" id="case-poster-title">Cheesy Potato Balls poster</h3>
+        </div>
+        <button class="case-close" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
+      </div>
+      <p class="case-lead">A marketing poster for a small food business, made in Photoshop. Bold type, warm gradients and the product front and centre.</p>
+      <img class="case-image" src="images/CHEESY%20POTATO%20BALLS.png" width="1153" height="437" loading="lazy" alt="Cheesy Potato Balls marketing poster">
+      <div class="case-links">
+        <a class="btn btn-glass glass" href="images/CHEESY%20POTATO%20BALLS.png" target="_blank" rel="noopener">Open full size <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </dialog>
+
+
+  <!-- Visitor stats (GoatCounter). To turn on: add a site in your GoatCounter
+       dashboard, put its name where it says YOUR-SITE, then remove the comment
+       markers around this script tag.
+  <script data-goatcounter="https://YOUR-SITE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+  -->
+
+  <script src="main.js?v=1"></script>
 </body>
 </html>
