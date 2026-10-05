@@ -1,6 +1,6 @@
 # Portfolio: Raywel Francis Martin
 
-**Version 2.1.1** · [Patch notes](docs/patch-notes/v2.1.1.md) · [Release history](docs/patch-notes/README.md)
+**Version 2.2** · [Patch notes](docs/patch-notes/v2.2.md) · [Release history](docs/patch-notes/README.md)
 
 Source for <a href="https://matimbu.github.io/portfolio/" target="_blank">matimbu.github.io/portfolio</a>.
 A single-page site in plain HTML, CSS and JavaScript, with no framework and no build step.
@@ -29,7 +29,7 @@ Then open http://localhost:5510.
 
 - **Message form.** Done: it sends through Formspree, using the form ID in `FORMSPREE_ID` (section 7 of `main.js`). To change where messages go, edit the form in your Formspree dashboard.
 - **Visitor stats.** Add a site in your GoatCounter dashboard, put its name in the commented-out script at the bottom of `index.html`, then remove the comment markers.
-- **Résumé.** Add `resume.pdf` to this folder (a version without your home address), then delete the word `hidden` from the résumé button in the hero.
+- **Résumé.** Edit `docs/resume/resume.html`, then print it to `resume.pdf` in this folder (A4, no headers and footers). To add a photo, put it in `docs/resume/` and uncomment the `<img>` in the header.
 - **After editing** `style.css` or `main.js`, bump the `?v=` number where `index.html` loads them, so returning visitors don't get an old cached copy.
 
 ## Structure
@@ -39,6 +39,7 @@ index.html                           The whole page, including the case-study di
 style.css                            Design tokens, glass, layout and motion, in numbered sections
 main.js                              Theme switch, opening, reveals, case studies, contact form
 404.html                             The "page not found" page GitHub Pages shows
+resume.pdf                           One-page résumé (source: docs/resume/resume.html)
 images/                              Screenshots, logos and the link preview image (og-image.png)
 certificate_ai-career-readiness.png  ASEAN Foundation AI Career Readiness
 certificate_java.pdf                 Oracle Academy Java Fundamentals

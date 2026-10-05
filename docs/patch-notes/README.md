@@ -4,6 +4,7 @@ Each version is also a git tag, so `git checkout v1.0` shows the site exactly as
 
 | Version | Released | Summary |
 |---|---|---|
+| [v2.2](v2.2.md) | October 5, 2026 | Résumé download, "What I learned" sections, Malolos Rush tagline |
 | [v2.1.1](v2.1.1.md) | October 5, 2026 | Full name in the menu bar |
 | [v2.1](v2.1.md) | October 5, 2026 | The contact form sends messages directly through Formspree |
 | [v2.0](v2.0.md) | October 5, 2026 | Glass redesign: light and dark themes, case studies, two new projects, no Bootstrap |

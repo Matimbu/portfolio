@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raywel Francis T. Martin - Résumé</title>
+  <!-- Source for resume.pdf. Edit here, then print to PDF (A4, no headers). -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Space+Grotesk:wght@500..700&display=swap">
+  <style>
+    @page { size: A4; margin: 14mm 15mm; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font: 400 9.6pt/1.45 "DM Sans", Arial, sans-serif; color: #18181b; }
+    a { color: inherit; text-decoration: none; }
+    header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding-bottom: 10px; border-bottom: 2px solid #2563eb; }
+    h1 { font: 600 22pt/1.05 "Space Grotesk", Arial, sans-serif; letter-spacing: -0.02em; }
+    .role { margin-top: 3px; color: #1d4ed8; font-weight: 500; font-size: 10.5pt; }
+    .contact { margin-top: 6px; color: #3f3f46; font-size: 9pt; }
+    .contact span + span::before { content: "|"; margin: 0 6px; color: #a1a1aa; }
+    /* Photo: drop a 2x2 photo in this folder and uncomment the <img> in the header */
+    .photo { width: 30mm; height: 30mm; object-fit: cover; border-radius: 4px; }
+    h2 { margin: 12px 0 5px; font: 600 10.5pt/1.2 "Space Grotesk", Arial, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: #1d4ed8; }
+    p { margin-bottom: 4px; }
+    .item { margin-bottom: 7px; break-inside: avoid; }
+    .item-head { display: flex; justify-content: space-between; gap: 12px; }
+    .item-title { font-weight: 600; }
+    .item-sub { color: #52525b; }
+    .when { color: #52525b; white-space: nowrap; }
+    ul { margin: 2px 0 0 14px; }
+    li { margin-bottom: 1.5px; }
+    .skills p { margin-bottom: 2px; }
+    .skills b { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Raywel Francis T. Martin</h1>
+      <p class="role">BSIT Student, Full-Stack Developer</p>
+      <p class="contact">
+        <span>Malolos, Bulacan</span>
+        <span><a href="mailto:raywelfrancismartin@gmail.com">raywelfrancismartin@gmail.com</a></span>
+        <span><a href="https://matimbu.github.io/portfolio/">matimbu.github.io/portfolio</a></span>
+      </p>
+      <p class="contact">
+        <span><a href="https://github.com/Matimbu">github.com/Matimbu</a></span>
+        <span><a href="https://www.linkedin.com/in/raywel-francis-martin-07a73b3b8/">linkedin.com/in/raywel-francis-martin-07a73b3b8</a></span>
+      </p>
+    </div>
+    <!-- <img class="photo" src="photo.jpg" alt="Raywel Francis T. Martin"> -->
+  </header>
+
+  <h2>Summary</h2>
+  <p>BSIT student at STI College Malolos looking for an OJT placement or junior developer role. I build desktop apps in C# and web apps in JavaScript and Node.js, including an inventory and point-of-sale system that a motorcycle parts shop runs every day. I learn by building, and I'm clear about what I know well and what I'm still learning.</p>
+
+  <h2>Technical Skills</h2>
+  <div class="skills">
+    <p><b>Core:</b> C#, .NET, WinForms, GDI+, Java, HTML, CSS, JavaScript, Node.js, SQL / SQLite, Bootstrap</p>
+    <p><b>Familiar with:</b> Next.js, Socket.IO, PostgreSQL, Git and GitHub, Unity 3D, Blender, SAP S/4HANA, Figma</p>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">Motorparts Inventory</span> <span class="item-sub">| Solo | Node.js, SQLite, JavaScript</span></span><span class="when">2026</span></div>
+    <ul>
+      <li>Inventory, point of sale and sales tracking for a motorcycle parts shop in Bulacan; in daily use at the shop.</li>
+      <li>Parts filter by bike model, a counter POS with guard rails, receipt-based returns, daily cash closing and reports.</li>
+      <li>One server file on Node's built-in HTTP and SQLite with no dependencies; phone-first, with staff and admin roles.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">The Hive Kiosk</span> <span class="item-sub">| Group project, kiosk built solo | C#, WinForms, GDI+</span></span><span class="when">2024 - 2026</span></div>
+    <ul>
+      <li>Self-order kiosk for The Hive Cafe; my teammates built the main POS system and I built the kiosk.</li>
+      <li>Every screen drawn by hand with GDI+, English and Filipino, sold-out handling, and a PIN-protected staff screen.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">Malolos Rush</span> <span class="item-sub">| Group capstone, in progress | Unity 3D, Blender</span></span><span class="when">2026</span></div>
+    <ul>
+      <li>3D designer and lead project manager: I plan the work, lead the team and write the capstone paper.</li>
+      <li>3D workflow combining AI for first drafts with Blender for the final models.</li>
+    </ul>
+  </div>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">CampusQue</span> <span class="item-sub">| Solo, in development | Next.js, Socket.IO, PostgreSQL</span></span><span class="when">2026</span></div>
+    <ul><li>Queue system for a campus lobby: take a number at a kiosk, follow it live on your phone, get called to the counter.</li></ul>
+  </div>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">Portfolio and personal site</span> <span class="item-sub">| Solo | HTML, CSS, JavaScript</span></span><span class="when">2026</span></div>
+    <ul><li>Two sites with no framework: a developer portfolio with case studies, and a personal site with a gallery and video section.</li></ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">Bachelor of Science in Information Technology</span> <span class="item-sub">| STI College Malolos</span></span><span class="when">2023 - present</span></div>
+  </div>
+
+  <h2>Certifications</h2>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">AI Career Readiness Training</span> <span class="item-sub">| ASEAN Foundation, supported by LinkedIn</span></span><span class="when">Sep 2026</span></div>
+    <div class="item-head"><span><span class="item-title">SD, MM, PP, FI, CO Modules of SAP S/4HANA using Global Bike</span> <span class="item-sub">| STI College, SAP University Alliances</span></span><span class="when">Jan - Jun 2025</span></div>
+    <div class="item-head"><span><span class="item-title">Java Fundamentals</span> <span class="item-sub">| Oracle Academy</span></span><span class="when">Jun 2024</span></div>
+    <div class="item-head"><span><span class="item-title">First IT Congress</span> <span class="item-sub">| STI College Malolos, certificate of participation</span></span></div>
+  </div>
+
+  <h2>Activities</h2>
+  <div class="item">
+    <div class="item-head"><span><span class="item-title">Champion, Syntax Valorant Cup</span> <span class="item-sub">| with my team</span></span><span class="when">2023</span></div>
+    <div class="item-head"><span><span class="item-title">Gold, STI Malolos Intramurals (Valorant)</span> <span class="item-sub">| through the lower bracket</span></span><span class="when">2023</span></div>
+  </div>
+
+  <h2>References</h2>
+  <p>Available upon request.</p>
+</body>
+</html>

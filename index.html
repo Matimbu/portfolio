@@ -103,10 +103,8 @@
           <p class="hero-sub" data-intro style="--n: 1">I build desktop and web apps, servers and databases included. One of them runs a motorcycle parts shop every day.</p>
           <div class="hero-ctas" data-intro style="--n: 2">
             <a class="btn btn-primary" href="#featured">View work <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
-            <a class="btn btn-glass glass" href="#contact">Contact</a>
-            <!-- Resume button: delete the word "hidden" once resume.pdf is in the
-                 repo root. Use a version without your home address. -->
-            <a class="btn btn-glass glass" href="resume.pdf" download hidden><i class="ph ph-download-simple" aria-hidden="true"></i> Résumé</a>
+            <!-- Resume: the PDF is built from docs/resume/resume.html -->
+            <a class="btn btn-glass glass" href="resume.pdf" target="_blank" rel="noopener"><i class="ph ph-download-simple" aria-hidden="true"></i> Résumé</a>
           </div>
         </div>
 
@@ -163,6 +161,7 @@
               <li>PostgreSQL</li>
               <li>Git</li>
               <li>Unity 3D</li>
+              <li>Blender</li>
               <li>SAP S/4HANA</li>
               <li>Figma</li>
             </ul>
@@ -234,10 +233,10 @@
             <div class="card-body">
               <p class="card-meta">2026 · Group capstone <span class="tag">In progress</span></p>
               <h3 class="card-title">Malolos Rush</h3>
-              <p class="card-text">Our capstone game in Unity. I'm the 3D designer and lead project manager, and I write the capstone paper.</p>
+              <p class="card-text">Bridging technology and heritage through interactive gaming. I'm the 3D designer and lead project manager of our Unity capstone.</p>
               <ul class="chips chips-sm" aria-label="Built with">
                 <li>Unity 3D</li>
-                <li>3D design</li>
+                <li>Blender</li>
                 <li>Project lead</li>
               </ul>
               <button class="card-open" type="button" data-open="case-rush" aria-haspopup="dialog">Read case study <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
@@ -399,7 +398,10 @@
     <div class="wrap footer-inner">
       <p>© <span id="year">2026</span> Raywel Francis Martin</p>
       <p>Built with plain HTML, CSS and JavaScript.</p>
-      <a href="#hero">Back to top <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+      <div class="footer-links">
+        <a href="mailto:raywelfrancismartin@gmail.com"><i class="ph ph-envelope-simple" aria-hidden="true"></i> Email me</a>
+        <a href="#hero">Back to top <i class="ph ph-arrow-up" aria-hidden="true"></i></a>
+      </div>
     </div>
   </footer>
 
@@ -444,7 +446,11 @@
         <figure><img src="images/motorparts/reorder-list.png" width="1440" height="900" loading="lazy" alt="Reorder list of low and out-of-stock parts"><figcaption>Reorder list for the supplier</figcaption></figure>
         <figure><img src="images/motorparts/phone-pos.png" width="780" height="1688" loading="lazy" alt="The point of sale on a phone"><figcaption>The POS on a phone</figcaption></figure>
       </div>
-      <p class="case-note">The public demo runs on generated data, so nothing in it belongs to the shop. The demo login is in the README.</p>
+      <div class="case-block">
+        <h4>What I learned</h4>
+        <p>To design for the people at the counter: useful buttons, keyboard shortcuts and small quality-of-life touches that save time on every sale. The owner was surprised by what I built. Looking back, the interface feels generic. It was my first POS, and my design has grown a lot since.</p>
+      </div>
+      <p class="case-note">The shop's real data is confidential, so the public demo runs on generated sample data. The demo login is in the README.</p>
       <div class="case-links">
         <a class="btn btn-primary" href="https://motorparts-inventory-demo.up.railway.app" target="_blank" rel="noopener">Live demo <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         <a class="btn btn-glass glass" href="https://github.com/Matimbu/motorparts-inventory" target="_blank" rel="noopener"><i class="ph ph-github-logo" aria-hidden="true"></i> Code</a>
@@ -481,6 +487,10 @@
           </ul>
         </div>
       </div>
+      <div class="case-block">
+        <h4>Why I made it, and what I learned</h4>
+        <p>I started making YouTube videos to share who I am: my hobbies, interests and beliefs. This site is another way to do that, so I wanted it personal, playful and simple. The animations surprised me most. Websites can do far more than what I learned in my first years of college, and it showed me how fast this field moves.</p>
+      </div>
       <img class="case-image" src="images/personal-site.png" width="1440" height="900" loading="lazy" alt="Home screen of my personal site">
       <div class="case-links">
         <a class="btn btn-primary" href="https://matimbu.github.io/raywelfrancismartin/" target="_blank" rel="noopener">Visit site <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
@@ -498,14 +508,18 @@
         </div>
         <button class="case-close" type="button" data-close aria-label="Close"><i class="ph ph-x" aria-hidden="true"></i></button>
       </div>
-      <p class="case-lead">Our capstone game, built in Unity with my group. It's still in progress, so there are no public screenshots yet.</p>
+      <p class="case-lead"><strong>Bridging Technology and Heritage Through Interactive Gaming.</strong> Our capstone game, built in Unity with my group. It's still in progress, so there are no public screenshots yet.</p>
       <div class="case-block">
         <h4>My part</h4>
         <ul class="ticks">
-          <li><i class="ph ph-check-circle" aria-hidden="true"></i>3D designer for the game.</li>
+          <li><i class="ph ph-check-circle" aria-hidden="true"></i>3D designer. I use AI to get ideas started and revise them quickly, then Blender to refine and control the final result.</li>
           <li><i class="ph ph-check-circle" aria-hidden="true"></i>Lead project manager: I plan the work and lead the members.</li>
           <li><i class="ph ph-check-circle" aria-hidden="true"></i>I write the capstone paper.</li>
         </ul>
+      </div>
+      <div class="case-block">
+        <h4>What I learned</h4>
+        <p>To understand my groupmates: their strengths, how they work, and the stories behind what they contribute. And that real leadership is following through on my own commitments and taking responsibility, not telling others what to do.</p>
       </div>
       <div class="case-links">
         <a class="btn btn-primary" href="https://matimbu.github.io/raywelfrancismartin/#crafts" target="_blank" rel="noopener">Play the teaser <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
