@@ -463,6 +463,24 @@ p { text-wrap: pretty; }
 
 /* 7. About ----------------------------------------------------------------- */
 
+/* Photo beside the intro line; it sits above the text on narrow phones */
+.about-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2rem;
+}
+.about-photo {
+  flex: none;
+  width: clamp(110px, 13vw, 160px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 1px 0 var(--glass-edge), var(--shadow);
+}
+.about-intro .about-lead { flex: 1 1 18rem; }
+
 .about-lead {
   max-width: 34ch;
   font-family: var(--font-display);

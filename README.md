@@ -29,7 +29,7 @@ Then open http://localhost:5510.
 
 - **Message form.** Done: it sends through Formspree, using the form ID in `FORMSPREE_ID` (section 7 of `main.js`). To change where messages go, edit the form in your Formspree dashboard.
 - **Visitor stats.** Add a site in your GoatCounter dashboard, put its name in the commented-out script at the bottom of `index.html`, then remove the comment markers.
-- **Résumé.** Edit `docs/resume/resume.html`, then print it to `resume.pdf` in this folder (A4, no headers and footers). To add a photo, put it in `docs/resume/` and uncomment the `<img>` in the header.
+- **Résumé.** Edit `docs/resume/resume.html`, then print it to `resume.pdf` in this folder (A4, no headers and footers). The photo is `docs/resume/photo.webp`.
 - **After editing** `style.css` or `main.js`, bump the `?v=` number where `index.html` loads them, so returning visitors don't get an old cached copy.
 
 ## Structure
