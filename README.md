@@ -1,6 +1,6 @@
 # Portfolio: Raywel Francis Martin
 
-**Version 2.1** · [Patch notes](docs/patch-notes/v2.1.md) · [Release history](docs/patch-notes/README.md)
+**Version 2.1.1** · [Patch notes](docs/patch-notes/v2.1.1.md) · [Release history](docs/patch-notes/README.md)
 
 Source for <a href="https://matimbu.github.io/portfolio/" target="_blank">matimbu.github.io/portfolio</a>.
 A single-page site in plain HTML, CSS and JavaScript, with no framework and no build step.
